@@ -5,24 +5,39 @@
         <title>Let's go and explore Melbourne</title>
         <style type="text/css">
             body {
-                background-image: url('background.jpg');
-                background-size: 720px;
-                background-repeat: no-repeat;
-                margin: 0;
+                margin: auto;
             }
 
-            .wrapper {
-                margin: 0;
+
+            .centrewrapper {
+                background-image: url('background.jpg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center top;  
+                margin: auto;
+                width: 100%;
+                height: 1000px;
+                position: absolute;
+            }
+
+            .absolutewrapper {
+                margin: auto;
                 padding: 0;
                 width: 720px;
+                position: relative;
+
             }
 
             .me {
                 position: absolute;
                 top: 280px;
-                left: 120px;
+                margin: 0 auto;
+                left: 50%;
+                margin-left: -240px;
 
             }
+
+
 
             .ball {
                 position: absolute;
@@ -63,9 +78,9 @@
                 position: relative;
                 top: 500px;
                 left: 0px;
-                width: 720px;
+                width: 100%;
                 height: 260px;
-                background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.7), rgba(0,0,0,.5),rgba(0,0,0,0));
+                background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
             }
 
             .title {
@@ -93,20 +108,40 @@
                 left: 150px;
             }
 
+            .colorfade {
+                position: absolute;
+                top: 900px;
+                height: 100px;
+                width: 100%;
+                background: linear-gradient(rgba(178,108,79,0),rgba(178,108,79,1));
+            }  
+            
+            .bottom {
+                top: 1000px;
+                position: absolute;
+                width: 100%;
+                height: 1000px;
+                background: rgba(178,108,79,1);
+            }  
+
         </style>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="centrewrapper">
             <div class="me"><img src="me.png"></div>
+            <div class="textbg"></div>
+        </div>
+        <div class="absolutewrapper">
+            <div class="title letsgo">let's go</div>
+            <div class="title and">and</div>
+            <div class="title exploremelbourne">explore Melbourne</div>
             <div class="ball ball1"><a href="#"><img src="streetart-icon.png"></a></div>
             <div class="ball ball2"><a href="#"><img src="streetart-icon.png"></a></div>
             <div class="ball ball3"><a href="#"><img src="streetart-icon.png"></a></div>
             <div class="ball ball4"><a href="#"><img src="streetart-icon.png"></a></div>
             <div class="ball ball5"><a href="#"><img src="streetart-icon.png"></a></div>
-            <div class="textbg"></div>
-            <div class="title letsgo">let's go</div>
-            <div class="title and">and</div>
-            <div class="title exploremelbourne">explore Melbourne</div>
         </div>
+        <div class="colorfade"></div>
+        <div class="bottom"></div>
     </body>
 </html>
