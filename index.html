@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Let's go and explore Melbourne</title>
         <style type="text/css">
             body {
@@ -23,63 +24,66 @@
             .absolutewrapper {
                 margin: auto;
                 padding: 0;
-                width: 720px;
+                width: 360px;
                 position: relative;
 
             }
 
+
             .me {
                 position: absolute;
-                top: 280px;
+                top: 140px;
                 margin: 0 auto;
                 left: 50%;
-                margin-left: -240px;
-
+                margin-left: -120px;
+                width: 240px;     /* need to add image resizing for me */
+                height: 240px;
             }
-
 
 
             .ball {
                 position: absolute;
+                width: 80px;    /* need to add image resizing for balls */
+                height: 80px;
             }
 
             .ball1 {
 
-                top: 300px;
-                left: 60px;
+                top: 150px;
+                left: 30px;
             }       
 
             .ball2 {
 
-                top: 140px;
-                left: 120px;
+                top: 70px;
+                left: 60px;
             }
 
             .ball3 {
 
-                top: 80px;
-                left: 280px;
+                top: 40px;
+                left: 140px;
             }
 
             .ball4 {
 
-                top: 140px;
-                left: 440px;
+                top: 70px;
+                left: 220px;
             }   
 
 
             .ball5 {
 
-                top: 300px;
-                left: 500px;
+                top: 150px;
+                left: 250px;
             }   
 
             .textbg {
                 position: relative;
-                top: 500px;
+                top: 250px;
                 left: 0px;
                 width: 100%;
-                height: 260px;
+                height: 130px;
                 background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
             }
 
@@ -91,57 +95,83 @@
             }
 
             .letsgo {
-                font-size: 60px;
-                top: 540px;
-                left: 160px;
+                font-size: 30px;
+                top: 270px;
+                left: 80px;
             }
 
             .and {
-                font-size: 36px; 
-                top: 600px;
-                left: 280px;
+                font-size: 18px; 
+                top: 300px;
+                left: 140px;
             }
 
             .exploremelbourne {
-                font-size: 72px;
-                top: 620px;
-                left: 150px;
+                font-size: 36px;
+                top: 310px;
+                left: 75px;
             }
 
             .colorfade {
                 position: absolute;
-                top: 900px;
-                height: 100px;
-                width: 100%;
+                top: 450px;
+                height: 50px;
+                width: 50%;
                 background: linear-gradient(rgba(178,108,79,0),rgba(178,108,79,1));
             }  
-            
+
             .bottom {
-                top: 1000px;
+                top: 500px;
                 position: absolute;
                 width: 100%;
-                height: 1000px;
+                height: 500px;
                 background: rgba(178,108,79,1);
             }  
+
+            .booknow {
+
+                position: fixed;
+                bottom: 20px;
+                right: 40px;
+                width: 150px;
+                height: 40px;
+                background: rgba(245,241,179,.75);
+                font: 700 18px 'Segoe UI', sans-serif;  /* double check if google font */
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                line-height: 40px;
+                box-shadow: 2px 2px 3px rgba(0,0,0,.5);;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: black;
+            }
+
 
         </style>
     </head>
     <body>
         <div class="centrewrapper">
-            <div class="me"><img src="me.png"></div>
+            <img class="me" src="me.png">
             <div class="textbg"></div>
         </div>
         <div class="absolutewrapper">
             <div class="title letsgo">let's go</div>
             <div class="title and">and</div>
             <div class="title exploremelbourne">explore Melbourne</div>
-            <div class="ball ball1"><a href="#"><img src="streetart-icon.png"></a></div>
-            <div class="ball ball2"><a href="#"><img src="streetart-icon.png"></a></div>
-            <div class="ball ball3"><a href="#"><img src="streetart-icon.png"></a></div>
-            <div class="ball ball4"><a href="#"><img src="streetart-icon.png"></a></div>
-            <div class="ball ball5"><a href="#"><img src="streetart-icon.png"></a></div>
+            <a href="#"><img class="ball ball1" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball2" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball3" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball4" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball5" src="streetart-icon.png"></a>
         </div>
         <div class="colorfade"></div>
         <div class="bottom"></div>
+        <div class="booknow"><a href="#">Book now</a></div>
     </body>
 </html>
