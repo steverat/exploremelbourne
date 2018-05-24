@@ -30,53 +30,10 @@
             }
 
 
-            .me {
-                position: absolute;
-                top: 140px;
-                margin: 0 auto;
-                left: 50%;
-                margin-left: -120px;
-                width: 240px;     /* need to add image resizing for me */
-                height: 240px;
-            }
 
 
-            .ball {
-                position: absolute;
-                width: 80px;    /* need to add image resizing for balls */
-                height: 80px;
-            }
+            /* default positions */
 
-            .ball1 {
-
-                top: 150px;
-                left: 30px;
-            }       
-
-            .ball2 {
-
-                top: 70px;
-                left: 60px;
-            }
-
-            .ball3 {
-
-                top: 40px;
-                left: 140px;
-            }
-
-            .ball4 {
-
-                top: 70px;
-                left: 220px;
-            }   
-
-
-            .ball5 {
-
-                top: 150px;
-                left: 250px;
-            }   
 
             .textbg {
                 position: relative;
@@ -111,6 +68,138 @@
                 top: 310px;
                 left: 75px;
             }
+
+
+            .me {
+                position: absolute;
+                top: 140px;
+                margin: 0 auto;
+                left: 50%;
+                margin-left: -120px;
+                width: 240px;     /* need to add image resizing for me */
+                height: 240px;
+            }
+
+            .ball {
+                position: absolute;
+                width: 80px;    /* need to add image resizing for balls */
+                height: 80px;
+            }
+
+
+            .ball1 {
+
+                top: 150px;
+                left: 30px;
+            }       
+
+            .ball2 {
+
+                top: 70px;
+                left: 60px;
+            }
+
+            .ball3 {
+
+                top: 40px;
+                left: 140px;
+            }
+
+            .ball4 {
+
+                top: 70px;
+                left: 220px;
+            }   
+
+
+            .ball5 {
+
+                top: 150px;
+                left: 250px;
+            }   
+
+            /* small positions */
+
+            
+
+            .smalltextbg {
+                position: relative;
+                top: 275px;
+                left: 0px;
+                width: 100%;
+                height: 130px;
+                background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
+            }
+
+            .smallletsgo {
+                font-size: 30px;
+                top: 295px;
+                left: 80px;
+            }
+
+            .smalland {
+                font-size: 18px; 
+                top: 325px;
+                left: 140px;
+            }
+
+            .smallexploremelbourne {
+                font-size: 36px;
+                top: 335px;
+                left: 75px;
+            }
+            
+            
+            .smallme {
+                position: absolute;
+                top: 230px;
+                left: 220px;
+                width: 110px;     /* need to add image resizing for me */
+                height: 110px;
+            }   
+
+
+
+            .bigball {
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                width: 240px;    /* need to add image resizing for balls */
+                height: 240px;
+            }   
+
+
+
+            .smallball {
+                position: absolute;
+                width: 50px;    /* need to add image resizing for balls */
+                height: 50px;
+                left: 285px;
+            }
+
+            .smallball1 {
+
+                top: 35px;
+            }       
+
+            .smallball2 {
+
+                top: 85px;
+            }
+
+            .smallball3 {
+
+                top: 135px;
+            }
+
+            .smallball4 {
+
+                top: 185px;
+            }   
+
+
+
+
 
             .colorfade {
                 position: absolute;
@@ -156,20 +245,42 @@
         </style>
     </head>
     <body>
+
+        <!-- position 1 
+
+<div class="centrewrapper">
+<img class="me" src="me.png">
+<div class="textbg"></div>
+</div>
+<div class="absolutewrapper">
+<div class="title letsgo">let's go</div>
+<div class="title and">and</div>
+<div class="title exploremelbourne">explore Melbourne</div>
+<a href="#"><img class="ball ball1" src="streetart-icon.png"></a>
+<a href="#"><img class="ball ball2" src="streetart-icon.png"></a>
+<a href="#"><img class="ball ball3" src="streetart-icon.png"></a>
+<a href="#"><img class="ball ball4" src="streetart-icon.png"></a>
+<a href="#"><img class="ball ball5" src="streetart-icon.png"></a>
+</div>
+//-->
+        <!-- position 2 //-->
+
         <div class="centrewrapper">
-            <img class="me" src="me.png">
-            <div class="textbg"></div>
+            <div class="smalltextbg"></div>
         </div>
         <div class="absolutewrapper">
-            <div class="title letsgo">let's go</div>
-            <div class="title and">and</div>
-            <div class="title exploremelbourne">explore Melbourne</div>
-            <a href="#"><img class="ball ball1" src="streetart-icon.png"></a>
-            <a href="#"><img class="ball ball2" src="streetart-icon.png"></a>
-            <a href="#"><img class="ball ball3" src="streetart-icon.png"></a>
-            <a href="#"><img class="ball ball4" src="streetart-icon.png"></a>
-            <a href="#"><img class="ball ball5" src="streetart-icon.png"></a>
+            <img class="smallme" src="me.png">
+            <div class="title smallletsgo">let's go</div>
+            <div class="title smalland">and</div>
+            <div class="title smallexploremelbourne">explore Melbourne</div>
+            <a href="#"><img class="bigball" src="streetart.png"></a>
+            <a href="#"><img class="smallball smallball1" src="streetart-icon.png"></a>
+            <a href="#"><img class="smallball smallball2" src="streetart-icon.png"></a>
+            <a href="#"><img class="smallball smallball3" src="streetart-icon.png"></a>
+            <a href="#"><img class="smallball smallball4" src="streetart-icon.png"></a>
         </div>
+
+
         <div class="colorfade"></div>
         <div class="bottom"></div>
         <div class="booknow"><a href="#">Book now</a></div>
