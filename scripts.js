@@ -110,6 +110,6 @@ window.onload = function(){
         }
     }
 
-    me.onclick = function () { toggleSize(); };
+    ball5.onclick = function () { toggleSize(); };
 
 }
