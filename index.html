@@ -42,6 +42,7 @@
                 width: 100%;
                 height: 130px;
                 background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
+                transition: top 1s;
             }
 
             .title {
@@ -49,6 +50,7 @@
                 font-family: "Dancing Script";
                 font-weight: bold;
                 color: white;
+                                transition: top 1s;
             }
 
             .letsgo {
@@ -73,17 +75,17 @@
             .me {
                 position: absolute;
                 top: 140px;
-                margin: 0 auto;
-                left: 50%;
-                margin-left: -120px;
+                left: 60px;
                 width: 240px;     /* need to add image resizing for me */
                 height: 240px;
+                transition: left 1s, top 1s, width 1s, height 1s;
             }
 
             .ball {
                 position: absolute;
                 width: 80px;    /* need to add image resizing for balls */
                 height: 80px;
+                transition: left 1s, top 1s, width 1s, height 1s;
             }
 
 
@@ -117,88 +119,6 @@
                 top: 150px;
                 left: 250px;
             }   
-
-            /* small positions */
-
-            
-
-            .smalltextbg {
-                position: relative;
-                top: 275px;
-                left: 0px;
-                width: 100%;
-                height: 130px;
-                background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
-            }
-
-            .smallletsgo {
-                font-size: 30px;
-                top: 295px;
-                left: 80px;
-            }
-
-            .smalland {
-                font-size: 18px; 
-                top: 325px;
-                left: 140px;
-            }
-
-            .smallexploremelbourne {
-                font-size: 36px;
-                top: 335px;
-                left: 75px;
-            }
-            
-            
-            .smallme {
-                position: absolute;
-                top: 230px;
-                left: 220px;
-                width: 110px;     /* need to add image resizing for me */
-                height: 110px;
-            }   
-
-
-
-            .bigball {
-                position: absolute;
-                top: 40px;
-                left: 40px;
-                width: 240px;    /* need to add image resizing for balls */
-                height: 240px;
-            }   
-
-
-
-            .smallball {
-                position: absolute;
-                width: 50px;    /* need to add image resizing for balls */
-                height: 50px;
-                left: 285px;
-            }
-
-            .smallball1 {
-
-                top: 35px;
-            }       
-
-            .smallball2 {
-
-                top: 85px;
-            }
-
-            .smallball3 {
-
-                top: 135px;
-            }
-
-            .smallball4 {
-
-                top: 185px;
-            }   
-
-
-
 
 
             .colorfade {
@@ -243,16 +163,131 @@
 
 
         </style>
+        <script>
+            function execute() {  
+
+                // attach elements to js variables with class
+
+                var me = document.getElementsByClassName("me")[0];
+                var ball = document.getElementsByClassName("ball");
+                var ball1 = document.getElementsByClassName("ball1")[0];
+                var ball2 = document.getElementsByClassName("ball2")[0];
+                var ball3 = document.getElementsByClassName("ball3")[0];
+                var ball4 = document.getElementsByClassName("ball4")[0];
+                var ball5 = document.getElementsByClassName("ball5")[0];
+                var textbg = document.getElementsByClassName("textbg")[0];
+                var letsgo = document.getElementsByClassName("letsgo")[0];
+                var and = document.getElementsByClassName("and")[0];
+                var exploremelbourne = document.getElementsByClassName("exploremelbourne")[0];
+
+
+                var defaultsize = true;
+
+                
+                
+                
+                function toggleSize() {
+                    if (defaultsize === true) {
+
+                        // make me small
+
+                        me.style.top = "230px";
+                        me.style.left = "220px";
+                        me.style.width = "110px";
+                        me.style.height = "110px";
+
+                        // make balls smaller and align left
+
+                        for (i = 0; i < (ball.length - 1); i++) {
+                            ball[i].style.width = "50px";
+                            ball[i].style.height = "50px";
+                            ball[i].style.left = "285px";
+                        }
+
+                        // move each ball
+
+                        ball1.style.top = "35px";
+                        ball2.style.top = "85px";
+                        ball3.style.top = "135px";
+                        ball4.style.top = "185px";
+
+                        ball5.style.top = "40px";
+                        ball5.style.left = "40px";
+                        ball5.style.width = "240px";
+                        ball5.style.height = "240px";
+                        ball5.src = "streetart.png";
+
+                        // move text and bg
+
+                        textbg.style.top = "275px";
+                        letsgo.style.top = "295px";
+                        and.style.top = "325px";
+                        exploremelbourne.style.top = "335px";
+
+
+                        defaultsize = false;
+
+                    } else {
+
+                        // make me big
+
+                        me.style.top = "140px";
+                        me.style.left = "60px";
+                        me.style.width = "240px";
+                        me.style.height = "240px"; 
+
+                        // make balls bigger
+
+                        for (i = 0; i < ball.length; i++) {
+                            ball[i].style.width = "80px";
+                            ball[i].style.height = "80px";
+                        }  
+
+
+
+                        // move each ball 
+
+                        ball1.style.top = "150px";
+                        ball1.style.left = "30px";
+                        ball2.style.top = "70px";
+                        ball2.style.left = "60px";
+                        ball3.style.top = "40px";
+                        ball3.style.left = "140px";
+                        ball4.style.top = "70px";
+                        ball4.style.left = "220px";
+                        ball5.style.top = "150px";
+                        ball5.style.left = "250px";                   
+                        ball5.src = "streetart-icon.png";
+
+                        // move text and bg
+
+
+                        textbg.style.top = "250px";
+                        letsgo.style.top = "270px";
+                        and.style.top = "300px";
+                        exploremelbourne.style.top = "310px";
+
+
+
+                        defaultsize = true; 
+
+
+                    }
+                }
+
+                me.onclick = function () { toggleSize(); };
+            }
+        </script>
     </head>
     <body>
 
         <!-- position 1 
 
 <div class="centrewrapper">
-<img class="me" src="me.png">
 <div class="textbg"></div>
 </div>
 <div class="absolutewrapper">
+<img class="me" id="melink" src="me.png">
 <div class="title letsgo">let's go</div>
 <div class="title and">and</div>
 <div class="title exploremelbourne">explore Melbourne</div>
@@ -266,23 +301,26 @@
         <!-- position 2 //-->
 
         <div class="centrewrapper">
-            <div class="smalltextbg"></div>
+            <div class="textbg"></div>
         </div>
         <div class="absolutewrapper">
-            <img class="smallme" src="me.png">
-            <div class="title smallletsgo">let's go</div>
-            <div class="title smalland">and</div>
-            <div class="title smallexploremelbourne">explore Melbourne</div>
-            <a href="#"><img class="bigball" src="streetart.png"></a>
-            <a href="#"><img class="smallball smallball1" src="streetart-icon.png"></a>
-            <a href="#"><img class="smallball smallball2" src="streetart-icon.png"></a>
-            <a href="#"><img class="smallball smallball3" src="streetart-icon.png"></a>
-            <a href="#"><img class="smallball smallball4" src="streetart-icon.png"></a>
+            <img class="me" id="melink" src="me.png">
+            <div class="title letsgo">let's go</div>
+            <div class="title and">and</div>
+            <div class="title exploremelbourne">explore Melbourne</div>
+            <a href="#"><img class="ball ball1" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball2" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball3" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball4" src="streetart-icon.png"></a>
+            <a href="#"><img class="ball ball5" src="streetart-icon.png"></a>
         </div>
 
 
         <div class="colorfade"></div>
         <div class="bottom"></div>
         <div class="booknow"><a href="#">Book now</a></div>
+        <script>
+            execute();
+        </script>
     </body>
 </html>
