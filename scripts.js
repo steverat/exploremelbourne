@@ -15,13 +15,27 @@ window.onload = function(){
     var exploremelbourne = document.getElementsByClassName("exploremelbourne")[0];
 
 
-    var defaultsize = true;
+    // left positions small balls
+
+    var littleBallPosition = ["35px", "85px", "135px","185px"];
+
+    var currentBall = 0;
+    var defaultSize = true;
 
 
 
+    function toggleSize(myBall) {
 
-    function toggleSize() {
-        if (defaultsize === true) {
+        // first check if in default position and we haven't clicked the big ball to close it
+
+        if ((defaultSize === true) || (myBall !== currentBall)) {
+
+            // if true let's go ahead and move to detailed position
+            // this is also for switching between balls if one is already active
+
+
+            var ballNumber = myBall - 1; 
+
 
             // make me small
 
@@ -30,28 +44,31 @@ window.onload = function(){
             me.style.width = "110px";
             me.style.height = "110px";
 
-            // make balls smaller and align left
 
-            for (i = 0; i < (ball.length - 1); i++) {
-                ball[i].style.width = "50px";
-                ball[i].style.height = "50px";
-                ball[i].style.left = "285px";
+            // positioning of non-current balls
+
+            var i = 0, j = 0;
+            for (i; i < ball.length; i++) {
+
+                if (i !== ballNumber) {
+                    ball[i].style.top = littleBallPosition[j];
+                    ball[i].style.left = "285px";
+                    ball[i].style.width = "50px";
+                    ball[i].style.height = "50px";
+                    ball[i].src = "streetart-icon.png";
+                    j++;
+                }
             }
 
-            // move each ball
+            // make big ball
 
-            ball1.style.top = "35px";
-            ball2.style.top = "85px";
-            ball3.style.top = "135px";
-            ball4.style.top = "185px";
+            ball[ballNumber].style.top = "40px";
+            ball[ballNumber].style.left = "40px";
+            ball[ballNumber].style.width = "240px";
+            ball[ballNumber].style.height = "240px";
+            ball[ballNumber].src = "streetart.png";
 
-            ball5.style.top = "40px";
-            ball5.style.left = "40px";
-            ball5.style.width = "240px";
-            ball5.style.height = "240px";
-            ball5.src = "streetart.png";
-
-            // move text and bg
+            // move text and bg down
 
             textbg.style.top = "275px";
             letsgo.style.top = "295px";
@@ -59,12 +76,18 @@ window.onload = function(){
             exploremelbourne.style.top = "335px";
 
 
-            defaultsize = false;
+            defaultSize = false;
+
+            // set currentball so if user clicks again it will send back to default position
+
+            currentBall = myBall;
+
+
+            // send back to default position
 
         } else {
 
             // make me big
-
 
             me.style.top = "140px";
             me.style.left = "60px";
@@ -73,12 +96,14 @@ window.onload = function(){
 
             // make balls bigger
 
-            for (i = 0; i < ball.length; i++) {
-                ball[i].style.width = "80px";
-                ball[i].style.height = "80px";
-            }  
 
-
+            for (i = 0; i < (ball.length); i++) {
+                if (ball[i] != currentBall) {
+                    ball[i].style.width = "80px";
+                    ball[i].style.height = "80px";
+                    ball[i].src = "streetart-icon.png"; 
+                };
+            }
 
             // move each ball 
 
@@ -91,8 +116,8 @@ window.onload = function(){
             ball4.style.top = "70px";
             ball4.style.left = "220px";
             ball5.style.top = "150px";
-            ball5.style.left = "250px";                   
-            ball5.src = "streetart-icon.png";
+            ball5.style.left = "250px";
+
 
             // move text and bg
 
@@ -102,14 +127,16 @@ window.onload = function(){
             and.style.top = "300px";
             exploremelbourne.style.top = "310px";
 
-
-
-            defaultsize = true; 
-
-
+            defaultSize = true; 
         }
     }
 
-    ball5.onclick = function () { toggleSize(); };
+//  event handlers
+
+    ball1.onclick = function () { toggleSize(1); };
+    ball2.onclick = function () { toggleSize(2); };
+    ball3.onclick = function () { toggleSize(3); };
+    ball4.onclick = function () { toggleSize(4); };
+    ball5.onclick = function () { toggleSize(5); };
 
 }
