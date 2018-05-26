@@ -1,0 +1,160 @@
+body {
+    margin: auto;
+}
+
+
+.centrewrapper {
+    background-image: url('background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;  
+    margin: auto;
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+}
+
+.absolutewrapper {
+    margin: auto;
+    padding: 0;
+    width: 360px;
+    position: relative;
+
+}
+
+
+
+
+/* title text */
+
+
+.textbg {
+    position: relative;
+    top: 250px;
+    left: 0px;
+    width: 100%;
+    height: 130px;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
+    transition: top 1s;
+}
+
+.title {
+    position: absolute;
+    font-family: "Dancing Script";
+    font-weight: bold;
+    color: white;
+    transition: top 1s;
+}
+
+.letsgo {
+    font-size: 30px;
+    top: 270px;
+    left: 80px;
+}
+
+.and {
+    font-size: 18px; 
+    top: 300px;
+    left: 140px;
+}
+
+.exploremelbourne {
+    font-size: 36px;
+    top: 310px;
+    left: 75px;
+}
+
+/* me */
+
+
+.me {
+    position: absolute;
+    top: 140px;
+    left: 60px;
+    width: 240px;     /* need to add image resizing for me */
+    height: 240px;
+    transition: left 1s, top 1s, width 1s, height 1s;
+}
+
+/* balls */
+
+
+.ball {
+    position: absolute;
+    width: 80px;    /* need to add image resizing for balls */
+    height: 80px;
+    transition: left 1s, top 1s, width 1s, height 1s;
+}
+
+
+.ball1 {
+
+    top: 150px;
+    left: 30px;
+}       
+
+.ball2 {
+
+    top: 70px;
+    left: 60px;
+}
+
+.ball3 {
+
+    top: 40px;
+    left: 140px;
+}
+
+.ball4 {
+
+    top: 70px;
+    left: 220px;
+}   
+
+
+.ball5 {
+
+    top: 150px;
+    left: 250px;
+}   
+
+
+.colorfade {
+    position: absolute;
+    top: 450px;
+    height: 50px;
+    width: 50%;
+    background: linear-gradient(rgba(178,108,79,0),rgba(178,108,79,1));
+}  
+
+.bottom {
+    top: 500px;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background: rgba(178,108,79,1);
+}  
+
+.booknow {
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 150px;
+    height: 40px;
+    background: rgba(245,241,179,.75);
+    font: 700 18px 'Segoe UI', sans-serif;  /* double check if google font */
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,.5);;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
