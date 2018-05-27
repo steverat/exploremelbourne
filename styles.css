@@ -38,7 +38,7 @@ body {
     width: 100%;
     height: 130px;
     background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0));
-    transition: top 1s;
+    transition: all 1s;
 }
 
 .title {
@@ -46,7 +46,7 @@ body {
     font-family: "Dancing Script";
     font-weight: bold;
     color: white;
-    transition: top 1s;
+    transition: all 1s;
 }
 
 .letsgo {
@@ -76,7 +76,7 @@ body {
     left: 60px;
     width: 240px;     /* need to add image resizing for me */
     height: 240px;
-    transition: left 1s, top 1s, width 1s, height 1s;
+    transition: all 1s;
 }
 
 /* balls */
@@ -86,7 +86,7 @@ body {
     position: absolute;
     width: 80px;    /* need to add image resizing for balls */
     height: 80px;
-    transition: left 1s, top 1s, width 1s, height 1s;
+    transition: all 1s;
 }
 
 
@@ -122,6 +122,36 @@ body {
 }   
 
 
+
+/* big ball title */
+
+
+.balltitle {
+    font: 24px 'Segoe UI', sans-serif;  /* double check if google font */
+    position: absolute;
+    color: white; 
+    left: 90px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.adjective {
+    text-transform: lowercase;
+    top: 170px;
+}
+
+.topic {
+    font-weight: bold;
+    text-transform: uppercase;
+    top: 200px;
+}
+
+
+
+
+/* bg fade after image */
+
+
 .colorfade {
     position: absolute;
     top: 450px;
@@ -137,6 +167,10 @@ body {
     height: 500px;
     background: rgba(178,108,79,1);
 }  
+
+
+
+/* book now button */
 
 .booknow {
 

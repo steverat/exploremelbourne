@@ -13,11 +13,22 @@ window.onload = function(){
     var letsgo = document.getElementsByClassName("letsgo")[0];
     var and = document.getElementsByClassName("and")[0];
     var exploremelbourne = document.getElementsByClassName("exploremelbourne")[0];
+    var balltitle = document.getElementsByClassName("balltitle");
+    var adjective = document.getElementsByClassName("adjective")[0];
+    var topic = document.getElementsByClassName("topic")[0];
+
 
 
     // left positions small balls
 
     var littleBallPosition = ["35px", "85px", "135px","185px"];
+    
+    // image file names, ball titles
+    
+    var ballSrc = ["culture","history","architecture","laneways","streetart"];
+    var adjectiveWord = ["Cool","Happy","Awesome","Laconic","Sublime"];
+    var topicWord = ["Culture","History","Architecture","Laneways","Street Art"];
+
 
     var currentBall = 0;
     var defaultSize = true;
@@ -55,18 +66,34 @@ window.onload = function(){
                     ball[i].style.left = "285px";
                     ball[i].style.width = "50px";
                     ball[i].style.height = "50px";
-                    ball[i].src = "streetart-icon.png";
+                    ball[i].src = ballSrc[i] + "-icon.png";
                     j++;
                 }
             }
 
             // make big ball
 
-            ball[ballNumber].style.top = "40px";
-            ball[ballNumber].style.left = "40px";
-            ball[ballNumber].style.width = "240px";
-            ball[ballNumber].style.height = "240px";
-            ball[ballNumber].src = "streetart.png";
+            ball[ballNumber].style.top = "0px";
+            ball[ballNumber].style.left = "0px";
+            ball[ballNumber].style.width = "320px";
+            ball[ballNumber].style.height = "320px";
+            ball[ballNumber].src = ballSrc[ballNumber] + ".png";
+
+            // add text to ball
+
+            adjective.innerHTML = adjectiveWord[ballNumber];
+            topic.innerHTML = topicWord[ballNumber];
+
+
+            window.setTimeout(function() {
+
+                for (i = 0; i < 2; i++) {
+                    balltitle[i].style.opacity = "1";
+                }
+
+            }, 250);
+
+
 
             // move text and bg down
 
@@ -87,25 +114,45 @@ window.onload = function(){
 
         } else {
 
-            // make me big
+            // this should happen if click ball that is currently open
+
+
+
+            // make me bigger again
 
             me.style.top = "140px";
             me.style.left = "60px";
             me.style.width = "240px";
             me.style.height = "240px"; 
 
-            // make balls bigger
 
+            // remove ball text
+
+
+            for (i = 0; i < 2; i++) {
+                balltitle[i].style.opacity = "0";
+            }
+
+            window.setTimeout(function() {
+
+                adjective.innerHTML = "";
+                topic.innerHTML = ""; 
+
+            }, 1000);
+
+
+
+            // make balls bigger
 
             for (i = 0; i < (ball.length); i++) {
                 if (ball[i] != currentBall) {
                     ball[i].style.width = "80px";
                     ball[i].style.height = "80px";
-                    ball[i].src = "streetart-icon.png"; 
+                    ball[i].src = ballSrc[i] + "-icon.png";
                 };
             }
 
-            // move each ball 
+            // move balls back to their original positions
 
             ball1.style.top = "150px";
             ball1.style.left = "30px";
@@ -119,8 +166,7 @@ window.onload = function(){
             ball5.style.left = "250px";
 
 
-            // move text and bg
-
+            // move text and bg back up
 
             textbg.style.top = "250px";
             letsgo.style.top = "270px";
@@ -131,7 +177,7 @@ window.onload = function(){
         }
     }
 
-//  event handlers
+    //  event handlers
 
     ball1.onclick = function () { toggleSize(1); };
     ball2.onclick = function () { toggleSize(2); };
