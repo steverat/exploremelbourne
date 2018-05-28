@@ -21,7 +21,7 @@ window.onload = function(){
 
     // left positions small balls
 
-    var littleBallPosition = ["35px", "85px", "135px","185px"];
+    var littleBallPosition = ["35", "85", "135","185"];
 
     // original positions of little balls
 
@@ -74,7 +74,7 @@ window.onload = function(){
             for (i; i < ball.length; i++) {
 
                 if (i !== ballNumber) {
-                    ball[i].style.top = littleBallPosition[j];
+                    ball[i].style.top = littleBallPosition[j] + "px";
                     ball[i].style.left = "285px";
                     ball[i].style.width = "50px";
                     ball[i].style.height = "50px";
@@ -112,7 +112,7 @@ window.onload = function(){
                 for (i = 0; i < 2; i++) {
                     balltitle[i].style.opacity = "0";
                 }
-                
+
                 window.setTimeout(function() {
 
                     for (i = 0; i < 2; i++) {
@@ -184,17 +184,10 @@ window.onload = function(){
 
             // move balls back to their original positions
 
-
-            ball1.style.top = "150px";
-            ball1.style.left = "30px";
-            ball2.style.top = "70px";
-            ball2.style.left = "60px";
-            ball3.style.top = "40px";
-            ball3.style.left = "140px";
-            ball4.style.top = "70px";
-            ball4.style.left = "220px";
-            ball5.style.top = "150px";
-            ball5.style.left = "250px";
+            for (i = 0; i < (ball.length); i++) {
+                ball[i].style.top = originalTopPosition[i] + "px";
+                ball[i].style.left = originalLeftPosition[i] + "px";
+            }
 
 
             // move text and bg back up
