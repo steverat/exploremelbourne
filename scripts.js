@@ -22,12 +22,18 @@ window.onload = function(){
     // left positions small balls
 
     var littleBallPosition = ["35px", "85px", "135px","185px"];
-    
+
+    // original positions of little balls
+
+    var originalTopPosition = ["150","70","40","70","150"];
+    var originalLeftPosition = ["30","60","140","220","250"];
+
+
     // image file names, ball titles
-    
-    var ballSrc = ["culture","history","architecture","laneways","streetart"];
-    var adjectiveWord = ["Cool","Happy","Awesome","Laconic","Sublime"];
-    var topicWord = ["Culture","History","Architecture","Laneways","Street Art"];
+
+    var ballSrc = ["culture","history","buildings","laneways","streetart"];
+    var adjectiveWord = ["Cool","Happy","Beautiful","Laconic","Sublime"];
+    var topicWord = ["Culture","History","Buildings","Laneways","Street Art"];
 
 
     var currentBall = 0;
@@ -39,7 +45,13 @@ window.onload = function(){
 
         // first check if in default position and we haven't clicked the big ball to close it
 
+
+        // blank space causing issue.. make big one without padding and resize as soon as hit
+
         if ((defaultSize === true) || (myBall !== currentBall)) {
+
+
+
 
             // if true let's go ahead and move to detailed position
             // this is also for switching between balls if one is already active
@@ -73,27 +85,45 @@ window.onload = function(){
 
             // make big ball
 
-            ball[ballNumber].style.top = "0px";
-            ball[ballNumber].style.left = "0px";
-            ball[ballNumber].style.width = "320px";
-            ball[ballNumber].style.height = "320px";
+            ball[ballNumber].style.top = "40px";
+            ball[ballNumber].style.left = "40px";
+            ball[ballNumber].style.width = "240px";
+            ball[ballNumber].style.height = "240px";
             ball[ballNumber].src = ballSrc[ballNumber] + ".png";
 
             // add text to ball
 
-            adjective.innerHTML = adjectiveWord[ballNumber];
-            topic.innerHTML = topicWord[ballNumber];
+            if (defaultSize === true) {
+
+                adjective.innerHTML = adjectiveWord[ballNumber];
+                topic.innerHTML = topicWord[ballNumber];
 
 
-            window.setTimeout(function() {
+                window.setTimeout(function() {
+
+                    for (i = 0; i < 2; i++) {
+                        balltitle[i].style.opacity = "1";
+                    }
+
+                }, 250);
+
+            } else {
 
                 for (i = 0; i < 2; i++) {
-                    balltitle[i].style.opacity = "1";
+                    balltitle[i].style.opacity = "0";
                 }
+                
+                window.setTimeout(function() {
 
-            }, 250);
+                    for (i = 0; i < 2; i++) {
+                        adjective.innerHTML = adjectiveWord[ballNumber];
+                        topic.innerHTML = topicWord[ballNumber];
+                        balltitle[i].style.opacity = "1";
+                    }
 
+                }, 250);
 
+            }
 
             // move text and bg down
 
@@ -153,6 +183,7 @@ window.onload = function(){
             }
 
             // move balls back to their original positions
+
 
             ball1.style.top = "150px";
             ball1.style.left = "30px";
