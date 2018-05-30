@@ -10,12 +10,14 @@ window.onload = function(){
     var ball4 = document.getElementsByClassName("ball4")[0];
     var ball5 = document.getElementsByClassName("ball5")[0];
     var textbg = document.getElementsByClassName("textbg")[0];
+    var title = document.getElementsByClassName("title");
     var letsgo = document.getElementsByClassName("letsgo")[0];
     var and = document.getElementsByClassName("and")[0];
     var exploremelbourne = document.getElementsByClassName("exploremelbourne")[0];
     var balltitle = document.getElementsByClassName("balltitle");
     var adjective = document.getElementsByClassName("adjective")[0];
     var topic = document.getElementsByClassName("topic")[0];
+    var blurb = document.getElementsByClassName("blurb")[0];
 
 
 
@@ -32,7 +34,7 @@ window.onload = function(){
     // image file names, ball titles
 
     var ballSrc = ["culture","history","buildings","laneways","streetart"];
-    var adjectiveWord = ["Cool","Happy","Beautiful","Laconic","Sublime"];
+    var adjectiveWord = ["Captivating","Hypnotising","Beautiful","Loveable","Sublime"];
     var topicWord = ["Culture","History","Buildings","Laneways","Street Art"];
 
 
@@ -51,7 +53,13 @@ window.onload = function(){
         if ((defaultSize === true) || (myBall !== currentBall)) {
 
 
+            //scroll to top
 
+            window.scroll({
+                top: 0, 
+                left: 0, 
+                behavior: 'smooth' 
+            });
 
             // if true let's go ahead and move to detailed position
             // this is also for switching between balls if one is already active
@@ -74,6 +82,7 @@ window.onload = function(){
             for (i; i < ball.length; i++) {
 
                 if (i !== ballNumber) {
+                    ball[i].style.position = "fixed";
                     ball[i].style.top = littleBallPosition[j] + "px";
                     ball[i].style.left = "285px";
                     ball[i].style.width = "50px";
@@ -85,6 +94,7 @@ window.onload = function(){
 
             // make big ball
 
+            ball[ballNumber].style.position = "absolute";
             ball[ballNumber].style.top = "40px";
             ball[ballNumber].style.left = "40px";
             ball[ballNumber].style.width = "240px";
@@ -97,7 +107,6 @@ window.onload = function(){
 
                 adjective.innerHTML = adjectiveWord[ballNumber];
                 topic.innerHTML = topicWord[ballNumber];
-
 
                 window.setTimeout(function() {
 
@@ -125,12 +134,40 @@ window.onload = function(){
 
             }
 
-            // move text and bg down
 
-            textbg.style.top = "275px";
-            letsgo.style.top = "295px";
-            and.style.top = "325px";
-            exploremelbourne.style.top = "335px";
+            // addblurb text
+
+            blurb.style.opacity = 1;
+
+
+            // updatedark background size
+
+            textbg.style.top = "255px";
+            textbg.style.height = "360px";   
+            textbg.style.background = "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6), rgba(0,0,0,.7), rgba(0,0,0,.6),rgba(0,0,0,0))";
+
+
+            // move title text down
+
+            letsgo.style.top = "595px";
+            and.style.top = "625px";
+            exploremelbourne.style.top = "635px";
+            for (i=0;i<title.length;i++) {
+                title[i].style.opacity = "0";
+            }
+
+            // old positions
+            //letsgo.style.top = "295px";
+            //and.style.top = "325px";
+            //exploremelbourne.style.top = "335px";
+
+
+            // change background black
+
+            //textbg.style.top = "275px";
+
+
+
 
 
             defaultSize = false;
@@ -138,6 +175,9 @@ window.onload = function(){
             // set currentball so if user clicks again it will send back to default position
 
             currentBall = myBall;
+
+
+
 
 
             // send back to default position
@@ -172,19 +212,13 @@ window.onload = function(){
 
 
 
-            // make balls bigger
+            // make balls back to original positions
 
             for (i = 0; i < (ball.length); i++) {
-                if (ball[i] != currentBall) {
-                    ball[i].style.width = "80px";
-                    ball[i].style.height = "80px";
-                    ball[i].src = ballSrc[i] + "-icon.png";
-                };
-            }
-
-            // move balls back to their original positions
-
-            for (i = 0; i < (ball.length); i++) {
+                ball[i].style.position = "absolute";
+                ball[i].style.width = "80px";
+                ball[i].style.height = "80px";
+                ball[i].src = ballSrc[i] + "-icon.png";
                 ball[i].style.top = originalTopPosition[i] + "px";
                 ball[i].style.left = originalLeftPosition[i] + "px";
             }
@@ -193,9 +227,20 @@ window.onload = function(){
             // move text and bg back up
 
             textbg.style.top = "250px";
+            textbg.style.height = "130px";   
+            textbg.style.background = "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5), rgba(0,0,0,.6), rgba(0,0,0,.7),rgba(0,0,0,0))";
             letsgo.style.top = "270px";
             and.style.top = "300px";
             exploremelbourne.style.top = "310px";
+            for (i=0;i<title.length;i++) {
+                title[i].style.opacity = "1";
+            }
+
+            // hide blurb text
+
+            blurb.style.opacity = 0;
+
+
 
             defaultSize = true; 
         }
