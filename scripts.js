@@ -9,6 +9,7 @@ window.onload = function(){
     var ball3 = document.getElementsByClassName("ball3")[0];
     var ball4 = document.getElementsByClassName("ball4")[0];
     var ball5 = document.getElementsByClassName("ball5")[0];
+    var allballs = document.getElementsByClassName("allballs")[0];
     var textbg = document.getElementsByClassName("textbg")[0];
     var title = document.getElementsByClassName("title");
     var letsgo = document.getElementsByClassName("letsgo")[0];
@@ -136,7 +137,7 @@ window.onload = function(){
 
 
             // addblurb text
-            
+
             // !!! need to add logic to show blurb segment depending on which clicked andresize the bg accordingly
 
             blurb.style.opacity = 1;
@@ -235,24 +236,19 @@ window.onload = function(){
             defaultSize = true; 
         }
     }
-    
-    // if click text then toggle current ball
-    
-    function triggerCorrectBall() {
-    
-        toggleSize(currentBall);
-        
-    }
-    
+
 
     //  event handlers
 
-    ball1.onclick = function () { toggleSize(1); };
-    ball2.onclick = function () { toggleSize(2); };
-    ball3.onclick = function () { toggleSize(3); };
-    ball4.onclick = function () { toggleSize(4); };
-    ball5.onclick = function () { toggleSize(5); };
-    balltitle[0].onclick = function () { triggerCorrectBall() };
-    balltitle[1].onclick = function () { triggerCorrectBall() };
+
+    allballs.onclick = function() {
+        var selection = event.target.dataset.ball;
+        if (selection === "text") {
+            toggleSize(currentBall);
+        }
+        else if (selection != undefined) {
+            toggleSize(selection);
+        }
+    };
 
 }
