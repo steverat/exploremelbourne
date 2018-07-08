@@ -136,6 +136,8 @@ window.onload = function(){
 
 
             // addblurb text
+            
+            // !!! need to add logic to show blurb segment depending on which clicked andresize the bg accordingly
 
             blurb.style.opacity = 1;
 
@@ -147,7 +149,7 @@ window.onload = function(){
             textbg.style.background = "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6), rgba(0,0,0,.7), rgba(0,0,0,.6),rgba(0,0,0,0))";
 
 
-            // move title text down
+            // move title text down and disappear
 
             letsgo.style.top = "595px";
             and.style.top = "625px";
@@ -155,18 +157,6 @@ window.onload = function(){
             for (i=0;i<title.length;i++) {
                 title[i].style.opacity = "0";
             }
-
-            // old positions
-            //letsgo.style.top = "295px";
-            //and.style.top = "325px";
-            //exploremelbourne.style.top = "335px";
-
-
-            // change background black
-
-            //textbg.style.top = "275px";
-
-
 
 
 
@@ -245,6 +235,15 @@ window.onload = function(){
             defaultSize = true; 
         }
     }
+    
+    // if click text then toggle current ball
+    
+    function triggerCorrectBall() {
+    
+        toggleSize(currentBall);
+        
+    }
+    
 
     //  event handlers
 
@@ -253,5 +252,7 @@ window.onload = function(){
     ball3.onclick = function () { toggleSize(3); };
     ball4.onclick = function () { toggleSize(4); };
     ball5.onclick = function () { toggleSize(5); };
+    balltitle[0].onclick = function () { triggerCorrectBall() };
+    balltitle[1].onclick = function () { triggerCorrectBall() };
 
 }
